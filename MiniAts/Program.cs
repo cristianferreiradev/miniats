@@ -55,6 +55,8 @@ app.UseMiniProfiler();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await context.Database.MigrateAsync();   // ← cria o banco e aplica migrations
+
     await DbSeeder.SeedAsync(context);
 }
 // Configure the HTTP request pipeline.
@@ -62,6 +64,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseAuthentication();   // quem é você?
