@@ -1,0 +1,16 @@
+@host = http://localhost:5076
+
+
+### Login
+# @name login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@miniats.com",
+  "senha": "senha123"
+}
+
+### Buscar vaga COM token
+GET {{host}}/api/vagas/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJhZG1pbkBtaW5pYXRzLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwianRpIjoiZWQ3MzQ1OTMtNmFmMC00YjIyLWE1YjYtNGEzMGU1OGM4ZTg3IiwiZXhwIjoxNzg5NDIxMzEzLCJpc3MiOiJNaW5pQXRzIiwiYXVkIjoiTWluaUF0c0NsaWVudGVzIn0.ZLzF6AtGY0lVpwEHnYy2AWLS3iJi0T_fQExVKLz2ARM
